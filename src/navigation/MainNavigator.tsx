@@ -6,7 +6,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { ThemeContext } from 'resources/theme';
 import { localization } from 'resources/localization';
-import { KEY } from 'common/constants';
 
 import {
   HomeScreen,

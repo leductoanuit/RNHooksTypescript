@@ -1,6 +1,6 @@
 import EncryptedStorage from 'react-native-encrypted-storage';
 
-import { KEY } from 'common/constants';
+const STORAGE_TOKEN = 'STORAGE_TOKEN';
 
 /**
  *  Async Save token to Encrypted Storage
@@ -11,7 +11,7 @@ import { KEY } from 'common/constants';
 async function setToken(accessToken: string = '', refreshToken: string = '') {
   try {
     await EncryptedStorage.setItem(
-      KEY.STORAGE_TOKEN,
+      STORAGE_TOKEN,
       JSON.stringify({
         accessToken,
         refreshToken,
@@ -27,7 +27,7 @@ async function setToken(accessToken: string = '', refreshToken: string = '') {
  */
 async function getToken() {
   try {
-    const data = await EncryptedStorage.getItem(KEY.STORAGE_TOKEN);
+    const data = await EncryptedStorage.getItem(STORAGE_TOKEN);
     if (data !== undefined) {
       return data;
     }
@@ -41,7 +41,7 @@ async function getToken() {
  */
 async function removeToken() {
   try {
-    await EncryptedStorage.removeItem(KEY.STORAGE_TOKEN);
+    await EncryptedStorage.removeItem(STORAGE_TOKEN);
   } catch (error) {
     console.log('Cannot remove encrypted memory!', error);
   }

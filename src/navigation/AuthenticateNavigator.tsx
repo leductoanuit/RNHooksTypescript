@@ -3,7 +3,6 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { localization } from 'resources/localization';
-import { KEY } from 'common/constants';
 
 import { LoginScreen, RegisterScreen } from 'features';
 

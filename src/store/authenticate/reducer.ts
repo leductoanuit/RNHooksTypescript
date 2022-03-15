@@ -1,6 +1,6 @@
 import { AnyAction } from 'redux';
 
-import { KEY } from 'common/constants';
+import { ACTION_STATUS_AUTHENTICATE } from './action';
 
 const authenticateState = {
   status: false,
@@ -8,7 +8,7 @@ const authenticateState = {
 
 function authenticateReducer(state = authenticateState, action: AnyAction) {
   switch (action.type) {
-    case KEY.ACTION_STATUS_AUTHENTICATE:
+    case ACTION_STATUS_AUTHENTICATE:
       return {
         status: action.payload.status,
       };
